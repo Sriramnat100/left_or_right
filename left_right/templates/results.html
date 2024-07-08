@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Political Leaning</title>
+    <style>
+        /* Define different backgrounds for each result */
+        .biden {
+            background-color: rgb(47, 169, 210);
+        }
+        .trump {
+            background-color: rgb(187, 31, 31);
+        }
+        .neutral {
+            background-color: lightgrey;
+        }
+    </style>
+</head>
+<body>
+    <p id="message"></p>
+
+    <script>
+        // Example score
+        let score = {{analyzation}};
+
+        // Reference to the body and paragraph element
+        let bodyElement = document.body;
+        let messageElement = document.getElementById('message');
+
+        // Function to determine and display the message based on the score
+        function displayMessage(score) {
+            if (score >= 60) {
+                messageElement.textContent = 'Extremely Left Supporting';
+                bodyElement.className = 'biden'; // Apply Biden background
+            } else if (score >= 40) {
+                messageElement.textContent = 'Somewhat Left Supporting';
+                bodyElement.className = 'biden'; // Apply Biden background
+            } else if (score >= 20) {
+                messageElement.textContent = 'Loosely Left Supporting';
+                bodyElement.className = 'biden'; // Apply Biden background
+            } else if (score > 0) {
+                messageElement.textContent = 'Very Loosely Left Supporting';
+                bodyElement.className = 'neutral'; 
+            } else if (score === 0) {
+                messageElement.textContent = 'Completely Neutral';
+                bodyElement.className = 'neutral'; 
+            } else if (score > -20) {
+                messageElement.textContent = 'Very Loosely Right Supporting';
+                bodyElement.className = 'neutral'; 
+            } else if (score > -40) {
+                messageElement.textContent = 'Loosely Right Supporting';
+                bodyElement.className = 'trump'; // Apply Trump background
+            } else if (score > -60) {
+                messageElement.textContent = 'Somewhat Right Supporting';
+                bodyElement.className = 'trump'; // Apply Trump background
+            } else {
+                messageElement.textContent = 'Extremely Right Supporting';
+                bodyElement.className = 'trump'; // Apply Trump background
+            }
+        }
+
+        // Call the function with the example score
+        displayMessage(score);
+    </script>
+</body>
+</html>

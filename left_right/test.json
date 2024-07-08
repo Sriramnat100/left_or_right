@@ -1,0 +1,14 @@
+[
+    {"question": "Do you support the legalization of marijuana?", "left_leaning": true},
+    {"question": "Should the government implement stricter regulations to combat climate change?", "left_leaning": true},
+    {"question": "Do you support stricter gun control laws?", "left_leaning": true},
+    {"strongly_agree": 2},
+    {"agree": 1},
+    {"neutral": 0},
+    {"disagree": -1},
+    {"strongly_disagree": -2},
+    {"extremely_imp": 1.5}, 
+    {"imp": 1},
+    {"kind_of_imp": 0.5},
+    {"not_imp": 0.1}
+]

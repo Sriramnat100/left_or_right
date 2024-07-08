@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presidential Candidate Chooser</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+          <h1 id="title" class="text-center">Determine What Political Party You Are More Aligned With?</h1>
+          <p id="description" class="description text-center">
+            This application is dedicated to first time voters
+          </p>
+        </header>
+        <form id="survey-form" action="{{ url_for('submit') }}" method="post">
+
+
+          {% for question in questions%}
+          <div class="form-group">
+            <p> {{ loop.index}}. {{ question }}</p>
+            
+            <label>
+              <input
+                name="user-recommend-{{loop.index}}"
+                value="strongly_agree"
+                type="radio"
+                class="input-radio"
+                
+              />Strongly Agree</label
+            >
+            <label>
+              <input
+                name="user-recommend-{{loop.index}}"
+                value="agree"
+                type="radio"
+                class="input-radio"
+              />Agree</label
+            >
+      
+            <label
+              ><input
+                name="user-recommend-{{loop.index}}"
+                value="neutral"
+                type="radio"
+                class="input-radio"
+              />Neutral</label
+            >
+
+            <label>
+              <input
+                name="user-recommend-{{loop.index}}"
+                value="disagree"
+                type="radio"
+                class="input-radio"
+              />Disagree</label
+            >
+      
+            <label
+              ><input
+                name="user-recommend-{{loop.index}}"
+                value="strongly_disagree"
+                type="radio"
+                class="input-radio"
+              />Strongly Disagree</label
+            >
+          
+            <div class="form-group">
+              <p>
+                How Important Is This Issue To You?
+              </p>
+              <select id="most-like" name="importance-{{ loop.index }}" class="form-control" required>
+                <option disabled selected value>Select an option</option>
+                <option value="extremely_imp">Extremely Important</option>
+                <option value="imp">Important</option>
+                <option value="kind_of_imp">Kind Of Important</option>
+                <option value="not_imp">Not Important</option>
+              </select>
+            </div>
+
+          </div>
+          {% endfor %}
+      
+          <div class="form-group">
+            <button type="submit" id="submit" class="submit-button">
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+      
+</body>
+</html>

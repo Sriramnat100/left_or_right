@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voter Demographics</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <div class="container">
+        <header class="header text-center">
+            <h1>Voter Demographics</h1>
+            <p class="description">Please fill out the form below to help us understand your voting tendencies.</p>
+        </header>
+        <form id="survey-form" action="{{ url_for('submit_demo') }}" method="post">
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" class="form-control" required>
+                    <option value="" disabled selected>Select your gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="non-binary">Non-binary</option>
+                    <option value="prefer-not-to-say">Prefer not to say</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="ethnicity">Ethnicity/Race:</label>
+                <select id="ethnicity" name="ethnicity" class="form-control" required>
+                    <option value="" disabled selected>Select your ethnicity/race</option>
+                    <option value="white">White</option>
+                    <option value="black">Black or African American</option>
+                    <option value="hispanic">Hispanic or Latino</option>
+                    <option value="asian">Asian</option>
+                    <option value="native-american">Native American</option>
+                    <option value="other">Other</option>
+                    <option value="prefer-not-to-say">Prefer not to say</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="education">Education Level:</label>
+                <select id="education" name="education" class="form-control" required>
+                    <option value="" disabled selected>Select your education level</option>
+                    <option value="less-than-high-school">Less than high school</option>
+                    <option value="high-school">High school diploma or GED</option>
+                    <option value="some-college">Some college</option>
+                    <option value="bachelor">Bachelor's degree</option>
+                    <option value="master">Master's degree</option>
+                    <option value="doctoral">Doctoral degree</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="income">Income Level:</label>
+                <select id="income" name="income" class="form-control" required>
+                    <option value="" disabled selected>Select your income level</option>
+                    <option value="less-than-20000">Less than $20,000</option>
+                    <option value="20000-49999">$20,000 - $49,999</option>
+                    <option value="50000-99999">$50,000 - $99,999</option>
+                    <option value="100000-199999">$100,000 - $199,999</option>
+                    <option value="200000-or-more">$200,000 or more</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="occupation">Occupation:</label>
+                <input type="text" id="occupation" name="occupation" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="marital-status">Marital Status:</label>
+                <select id="marital-status" name="marital-status" class="form-control" required>
+                    <option value="" disabled selected>Select your marital status</option>
+                    <option value="single">Single</option>
+                    <option value="married">Married</option>
+                    <option value="divorced">Divorced</option>
+                    <option value="widowed">Widowed</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="location">Geographic Location:</label>
+                <input type="text" id="location" name="location" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="religion">Religious Affiliation:</label>
+                <select id="religion" name="religion" class="form-control" required>
+                    <option value="" disabled selected>Select your religious affiliation</option>
+                    <option value="christian">Christian</option>
+                    <option value="muslim">Muslim</option>
+                    <option value="jewish">Jewish</option>
+                    <option value="hindu">Hindu</option>
+                    <option value="buddhist">Buddhist</option>
+                    <option value="atheist">Atheist</option>
+                    <option value="agnostic">Agnostic</option>
+                    <option value="other">Other</option>
+                    <option value="prefer-not-to-say">Prefer not to say</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="voting-history">Previous Voting Behavior:</label>
+                <select id="voting-history" name="voting-history" class="form-control" required>
+                    <option value="" disabled selected>Select your voting behavior</option>
+                    <option value="always-vote">I always vote</option>
+                    <option value="sometimes-vote">I sometimes vote</option>
+                    <option value="rarely-vote">I rarely vote</option>
+                    <option value="never-vote">I never vote</option>
+                    <option value="first-vote">First Time Voting</option>
+                </select>
+            </div>
+            <button type="submit" class="submit-button">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
